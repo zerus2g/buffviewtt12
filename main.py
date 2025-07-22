@@ -22,8 +22,8 @@ def start_buff_process():
         return jsonify({"status": "error", "message": "Buff process is already running."}), 409
 
     delay_sec = int(request.args.get('delay', 60))
-    max_workers = int(request.args.get('workers', 50))
-    requests_per_link = int(request.args.get('requests_per_link', 100))
+    max_workers = int(request.args.get('workers', 500))
+    requests_per_link = int(request.args.get('requests_per_link', 500))
 
     links_file_path = os.getenv("LINKS_FILE", "links.txt")
     proxies_file_path = os.getenv("PROXIES_FILE", "proxies.txt")
